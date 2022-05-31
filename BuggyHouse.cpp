@@ -1,4 +1,5 @@
 #include "BuggyHouse.h"
+#include "Bug.h"
 
 HRESULT BuggyHouse::Initialize(HINSTANCE hInstance, LPCWSTR title, UINT width, UINT height)
 {
@@ -8,18 +9,11 @@ HRESULT BuggyHouse::Initialize(HINSTANCE hInstance, LPCWSTR title, UINT width, U
 
 	mspBackground = std::make_unique<Actor>(this, L"Data/back1_1024.png", 0.0f, 0.0f);
 	
-	float sx{}, sy{};
-	RECT rct{};
-	GetClientRect(mHwnd, &rct);
+
 
 	for (int i = 0; i < 40; i++)
 	{
-		sx = static_cast<float>(rand() % (rct.right - rct.left));
-		sy = static_cast<float>(rand() % (rct.bottom - rct.top));
-		mspbugList.push_back(
-			std::make_unique<Actor>(this, L"Data/bug1_1.png", sx, sy)
-		);
-
+		mspbugList.push_back(std::make_unique<Bug>(this));
 	}
 	return S_OK;
 }
@@ -48,10 +42,6 @@ void BuggyHouse::Render()
 
 	for (auto& e : mspbugList)
 	{
-		auto pt = e->GetPosition();
-		pt.x += static_cast<float>(1 - rand() % 3);
-		pt.y += static_cast<float>(1 - rand() % 3);
-		e->SetPosition(pt);
 		e->Draw();
 	}
 	

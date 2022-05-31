@@ -35,4 +35,5 @@ public :
 
 public :
 	ID2D1HwndRenderTarget* GetRenderTarget() { return mspRenderTarget.Get(); }
+	inline HWND GetWindowHandle() const { return mHwnd; }
 };

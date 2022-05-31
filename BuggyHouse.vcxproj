@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="BitmapManager.cpp" />
+    <ClCompile Include="Bug.cpp" />
     <ClCompile Include="BuggyHouse.cpp" />
     <ClCompile Include="ComException.cpp" />
     <ClCompile Include="D2DFramework.cpp" />
@@ -137,6 +138,7 @@
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="BitmapManager.h" />
+    <ClInclude Include="Bug.h" />
     <ClInclude Include="BuggyHouse.h" />
     <ClInclude Include="ComException.h" />
     <ClInclude Include="D2DFramework.h" />
